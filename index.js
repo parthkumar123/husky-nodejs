@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config({
-    path: path.join(__dirname, `/env/${process.env.NODE_ENV}.env`)
-})
+  path: path.join(__dirname, `/env/${process.env.NODE_ENV}.env`),
+});
 
 // Connect to MongoDB
-const connectMongoDB = require('./connection');
+const connectMongoDB = require("./connection");
 connectMongoDB(process.env.MONGO_URI);
 
 // Routes
@@ -27,6 +27,6 @@ app.use("/api", indexRoute);
 const port = process.env.PORT || 3000;
 // Start server
 app.listen(port, (err) => {
-    if (err) throw err;
-    console.log(`Server is running on port ${port}`);
-})
+  if (err) throw err;
+  console.log(`Server is running on port ${port}`);
+});

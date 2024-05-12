@@ -7,6 +7,9 @@
     "dev": "set NODE_ENV=development&&nodemon index.js",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "keywords": [
     "nodejs",
     "mvc"
@@ -21,6 +24,8 @@
   },
   "devDependencies": {
     "husky": "^9.0.11",
-    "nodemon": "^3.1.0"
+    "lint-staged": "^15.2.2",
+    "nodemon": "^3.1.0",
+    "prettier": "3.2.5"
   }
 }
